@@ -1,0 +1,16 @@
+IMPORTANT: Please add your resume PDF here
+
+Replace this file with your actual resume PDF named: resume.pdf
+
+The download button in the portfolio will link to: assets/resume.pdf
+
+You can create your resume using:
+- Microsoft Word and export as PDF
+- Google Docs and download as PDF
+- LaTeX resume templates
+- Online resume builders (Canva, Resume.io, etc.)
+
+Once you have your resume PDF ready, simply:
+1. Delete this file
+2. Copy your resume.pdf into this assets folder
+3. The download button will automatically work!
