@@ -6,6 +6,11 @@ AOS.init({
     offset: 100
 });
 
+// Initialize EmailJS
+(function() {
+    emailjs.init("CxGRWNGYEUOGNmUy5"); // Your Public Key
+})();
+
 // Theme Toggle Functionality
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
@@ -104,31 +109,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact Form Submission
+// Contact Form Submission with EmailJS
 const contactForm = document.getElementById('contact-form');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
+    // Get the submit button
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+    
+    // Prepare template parameters
+    const templateParams = {
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
         message: document.getElementById('message').value
     };
     
-    // Create mailto link
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    const mailtoLink = `mailto:hello@mushfiqnehal.dev?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message (optional)
-    alert('Thank you for your message! Your email client will open shortly.');
-    
-    // Reset form
-    contactForm.reset();
+    // Send email using EmailJS
+    emailjs.send('service_m6dneu8', 'template_4fqswrs', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            // Show success message
+            submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
+            submitBtn.classList.remove('from-primary', 'to-secondary');
+            submitBtn.classList.add('bg-green-500');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Show alert
+            alert('✅ Thank you! Your message has been sent successfully. I\'ll get back to you soon!');
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.classList.remove('bg-green-500');
+                submitBtn.classList.add('from-primary', 'to-secondary');
+            }, 3000);
+        }, function(error) {
+            console.log('FAILED...', error);
+            
+            // Show error message
+            submitBtn.innerHTML = '<i class="fas fa-times mr-2"></i> Failed to Send';
+            submitBtn.classList.remove('from-primary', 'to-secondary');
+            submitBtn.classList.add('bg-red-500');
+            
+            // Show alert
+            alert('❌ Oops! Something went wrong. Please try again or email me directly at hello@mushfiqnehal.dev');
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.classList.remove('bg-red-500');
+                submitBtn.classList.add('from-primary', 'to-secondary');
+            }, 3000);
+        });
 });
 
 // Typing Animation for Hero Section (Optional Enhancement)
@@ -196,9 +240,9 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 100) {
-        header.classList.add('shadow-lg');
+        header.classList.add('scrolled');
     } else {
-        header.classList.remove('shadow-lg');
+        header.classList.remove('scrolled');
     }
     
     lastScroll = currentScroll;

@@ -39,6 +39,28 @@ html {
     font-weight: 500;
 }
 
+/* Glass morphism effect for navbar */
+header {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(209, 213, 219, 0.2);
+}
+
+.dark header {
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add subtle glow effect on scroll */
+header.scrolled {
+    box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.1);
+}
+
+.dark header.scrolled {
+    box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.15);
+}
+
 /* Skill Badge - Modern Gradient */
 .skill-badge {
     display: inline-block;
@@ -257,6 +279,20 @@ img {
     50% {
         background-position: 100% center;
     }
+}
+
+/* Floating animation for decorative icons */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
 }
 
 /* Arrow Animation for CTA Buttons */
