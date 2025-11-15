@@ -722,33 +722,56 @@
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Project 1: EV Route Optimization -->
+                <!-- Project 1: JUST Mart -->
                 <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:border-primary dark:hover:border-primary transition-all group" data-aos="fade-up">
-                    <!-- Project Image -->
+                    <!-- Image Carousel -->
                     <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-900">
-                        <img src="assets/images/Route  optimization of EV.PNG" alt="AI-Driven EV Route Optimization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="carousel-container h-full">
+                            <img src="assets/images/JUST Mart/Screenshot 2025-11-16 035924.png" alt="JUST Mart Screenshot 1" class="carousel-image w-full h-full object-cover">
+                            <img src="assets/images/JUST Mart/Screenshot 2025-11-16 040013.png" alt="JUST Mart Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
+                            <img src="assets/images/JUST Mart/Screenshot 2025-11-16 040040.png" alt="JUST Mart Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
+                            <img src="assets/images/JUST Mart/Screenshot 2025-11-16 040210.png" alt="JUST Mart Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
+                        </div>
+                        <!-- Carousel Controls -->
+                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 text-gray-900 dark:text-white w-9 h-9 rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg flex items-center justify-center">
+                            <i class="fas fa-chevron-left text-sm"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 text-gray-900 dark:text-white w-9 h-9 rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg flex items-center justify-center">
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </button>
+                        <!-- Dots Indicator -->
+                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                            <span class="dot w-2 h-2 rounded-full bg-white cursor-pointer active shadow-sm"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 cursor-pointer shadow-sm"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 cursor-pointer shadow-sm"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 cursor-pointer shadow-sm"></span>
+                        </div>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">AI-Driven EV Route Optimization</h3>
-                            <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-xs font-bold flex items-center gap-1.5">
-                                <i class="fas fa-bolt text-xs"></i>
-                                ML Project
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">JUST Mart</h3>
+                            <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full text-xs font-bold flex items-center gap-1.5">
+                                <i class="fas fa-store text-xs"></i>
+                                E-Commerce
                             </span>
                         </div>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SUMO</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">TraCI</span>
-                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">ASP.NET Core 8.0</span>
+                            <span class="tech-tag">MVC</span>
+                            <span class="tech-tag">Azure</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">Azure SQL</span>
+                            <span class="tech-tag">Blob Storage</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                            Engineered a real-time, data-driven route optimization system for electric vehicles. Built a custom road network in SUMO, collecting traffic data via TraCI/virtual sensors, and processing it through a FastAPI server. Leveraged machine learning to enhance route efficiency and minimize energy consumption.
+                            A modern e-commerce web application built with ASP.NET Core 8.0 MVC, featuring role-based authentication, cloud image storage via Azure Blob Storage, and Stripe payment integration. The platform includes comprehensive admin dashboards for product, order, and user management, with real-time shopping cart functionality and automated email notifications through Brevo.
                         </p>
                         <div class="flex gap-4">
-                            <a href="https://github.com/mushfiq-nehal/Route-Optimization-of-Electric-Vehicles-in-Bangladesh" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary font-medium transition-colors">
+                            <a href="https://justmart-bpdwb6hkgae3c3bq.southeastasia-01.azurewebsites.net" target="_blank" class="flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/mushfiq-nehal/JUST-Mart" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary font-medium transition-colors">
                                 <i class="fab fa-github"></i>
                                 <span>Code</span>
                             </a>
@@ -757,7 +780,7 @@
                 </div>
                 
                 <!-- Project 2: Share-Reads -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:border-primary dark:hover:border-primary transition-all group" data-aos="fade-up">
+                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:border-primary dark:hover:border-primary transition-all group" data-aos="fade-up" data-aos-delay="100">
                     <!-- Image Carousel -->
                     <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-900">
                         <div class="carousel-container h-full">
@@ -797,10 +820,10 @@
                             <span class="tech-tag">Bootstrap</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                            Book-sharing platform for uploading, managing, borrowing, and reviewing books. Features include user authentication, book management, and review system.
+                            Share-Reads is a full-stack web application that enables users to share and borrow books within a community. Built with Node.js, Express, MongoDB, and Firebase, the platform features user authentication, real-time notifications, book search functionality, and request management for borrowing and lending.
                         </p>
                         <div class="flex gap-4">
-                            <a href="https://share-reads.web.app" target="_blank" class="flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors">
+                            <a href="https://share-reads-web-app-psi.vercel.app/" target="_blank" class="flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors">
                                 <i class="fas fa-external-link-alt"></i>
                                 <span>Live Demo</span>
                             </a>
@@ -865,6 +888,40 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 4: AI-Driven EV Route Optimization -->
+                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:border-primary dark:hover:border-primary transition-all group" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Project Image -->
+                    <div class="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-900">
+                        <img src="assets/images/Route  optimization of EV.PNG" alt="AI-Driven EV Route Optimization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">AI-Driven EV Route Optimization</h3>
+                            <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-xs font-bold flex items-center gap-1.5">
+                                <i class="fas fa-bolt text-xs"></i>
+                                ML Project
+                            </span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SUMO</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">TraCI</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            Engineered a real-time, data-driven route optimization system for electric vehicles. Built a custom road network in SUMO, collecting traffic data via TraCI/virtual sensors, and processing it through a FastAPI server. Leveraged machine learning to enhance route efficiency and minimize energy consumption.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/mushfiq-nehal/Route-Optimization-of-Electric-Vehicles-in-Bangladesh" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary font-medium transition-colors">
+                                <i class="fab fa-github"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -894,9 +951,14 @@
                             <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">
                                 Task-Efficient Framework for Sentiment Analysis of Bangla E-commerce Reviews using Transformer
                             </h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-3">
                                 ICRTCIS 2025 (AIS, Chapter 4) • Transformer-based NLP research • Presented at Arya College, Jaipur, India
                             </p>
+                            <a href="https://doi.org/10.1007/978-3-032-09832-0_4" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-0.5">
+                                <i class="fas fa-link"></i>
+                                <span>View DOI</span>
+                                <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1037,6 +1099,17 @@
                                     <p class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-blue-500 transition-colors">Mushfiqur Rahman</p>
                                 </div>
                                 <i class="fas fa-arrow-right text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all"></i>
+                            </a>
+                            
+                            <a href="https://orcid.org/0009-0003-1636-7763" target="_blank" class="group flex items-center gap-4 p-4 bg-white dark:bg-dark-lighter rounded-xl border border-gray-100 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/10">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/10 to-green-600/10 flex items-center justify-center group-hover:scale-110 transition-transform group-hover:bg-green-500/20">
+                                    <i class="fab fa-orcid text-green-500 text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs text-gray-500 dark:text-gray-500 mb-0.5">ORCID</p>
+                                    <p class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-green-500 transition-colors">0009-0003-1636-7763</p>
+                                </div>
+                                <i class="fas fa-arrow-right text-gray-400 group-hover:text-green-500 group-hover:translate-x-1 transition-all"></i>
                             </a>
                         </div>
                     </div>
