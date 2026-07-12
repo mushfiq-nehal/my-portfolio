@@ -83,9 +83,9 @@ function updateActiveNavLink() {
     });
     
     navLinks.forEach(link => {
-        link.classList.remove('text-primary');
+        link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('text-primary');
+            link.classList.add('active');
         }
     });
 }
@@ -175,34 +175,52 @@ contactForm.addEventListener('submit', (e) => {
         });
 });
 
-// Typing Animation for Hero Section (Optional Enhancement)
-const heroTitle = document.querySelector('#home h2');
-if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    let index = 0;
-    
-    function typeWriter() {
-        if (index < text.length) {
-            heroTitle.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 50);
-        }
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Count-up animation for hero stat numbers
+function runCountUp(el) {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    if (prefersReducedMotion) { el.textContent = target; return; }
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
     }
-    
-    // Start typing animation after a short delay
-    setTimeout(typeWriter, 500);
+    requestAnimationFrame(tick);
 }
 
-// Add parallax effect to hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroSection = document.getElementById('home');
-    
-    if (heroSection && scrolled < window.innerHeight) {
-        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+if ('IntersectionObserver' in window) {
+    const countObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCountUp(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.stat-count').forEach(el => countObserver.observe(el));
+} else {
+    document.querySelectorAll('.stat-count').forEach(el => { el.textContent = el.dataset.target; });
+}
+
+// Magnetic hover on primary buttons
+if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.3 - 2}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+}
 
 // Lazy loading for images (if needed)
 if ('IntersectionObserver' in window) {

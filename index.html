@@ -7,7 +7,7 @@
     <title>Mushfiq Nehal | Portfolio</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2338bdf8'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='58' font-weight='bold' fill='%230a0e1a' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='0.5' stop-color='%23a855f7'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='58' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,12 +34,6 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#38bdf8',
-                        dark: '#0a0e1a',
-                        'dark-light': '#0f1729',
-                        'dark-lighter': '#111827',
-                    },
                     fontFamily: {
                         inter: ['Inter', 'sans-serif'],
                         poppins: ['Poppins', 'sans-serif'],
@@ -49,92 +43,92 @@
         }
     </script>
 </head>
-<body class="font-inter bg-white dark:bg-dark text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<body class="font-inter overflow-x-hidden">
+
+    <!-- ==================== AURORA BACKGROUND ==================== -->
+    <div class="aurora-bg" aria-hidden="true">
+        <div class="aurora-orb o1"></div>
+        <div class="aurora-orb o2"></div>
+        <div class="aurora-orb o3"></div>
+        <div class="aurora-grid"></div>
+    </div>
 
     <!-- ==================== NAVBAR ==================== -->
-    <header class="fixed inset-x-0 top-0 z-50 bg-white/85 dark:bg-dark/85 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800/60 transition-colors duration-300">
-        <nav class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
-            <a href="#home" class="text-xl font-bold font-poppins tracking-tight text-slate-900 dark:text-white">
-                Mushfiq<span class="text-primary">.</span>
+    <header class="fixed inset-x-0 top-4 z-50 px-4">
+        <nav class="nav-shell max-w-5xl mx-auto px-5 sm:px-6 py-3 flex items-center justify-between">
+            <a href="#home" class="text-lg font-bold font-poppins tracking-tight" style="color:var(--text)">
+                Mushfiq<span class="text-gradient">.</span>
             </a>
 
-            <ul class="hidden md:flex items-center gap-8">
-                <li><a href="#home"       class="nav-link text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200">Home</a></li>
-                <li><a href="#experience" class="nav-link text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200">Experience</a></li>
-                <li><a href="#skills"     class="nav-link text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200">Skills</a></li>
-                <li><a href="#projects"   class="nav-link text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200">Projects</a></li>
-                <li><a href="#contact"    class="nav-link text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200">Contact</a></li>
+            <ul class="hidden md:flex items-center gap-7">
+                <li><a href="#home"       class="nav-link text-sm transition-colors">Home</a></li>
+                <li><a href="#experience" class="nav-link text-sm transition-colors">Experience</a></li>
+                <li><a href="#skills"     class="nav-link text-sm transition-colors">Skills</a></li>
+                <li><a href="#projects"   class="nav-link text-sm transition-colors">Projects</a></li>
+                <li><a href="#contact"    class="nav-link text-sm transition-colors">Contact</a></li>
             </ul>
 
             <div class="flex items-center gap-1">
                 <button id="theme-toggle" aria-label="Toggle theme"
-                        class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors duration-200">
-                    <i class="fas fa-moon text-slate-500 dark:hidden text-base"></i>
-                    <i class="fas fa-sun text-slate-400 hidden dark:inline text-base"></i>
+                        class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <i class="fas fa-moon dark:hidden text-base" style="color:var(--text-muted)"></i>
+                    <i class="fas fa-sun hidden dark:inline text-base text-amber-300"></i>
                 </button>
                 <button id="mobile-menu-btn" aria-label="Open menu"
-                        class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors">
-                    <i class="fas fa-bars text-lg text-slate-600 dark:text-slate-300"></i>
+                        class="md:hidden p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <i class="fas fa-bars text-lg" style="color:var(--text-muted)"></i>
                 </button>
             </div>
         </nav>
 
-        <ul id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-lighter border-t border-slate-200 dark:border-slate-800 px-6 py-3 space-y-0.5">
-            <li><a href="#home"       class="block py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Home</a></li>
-            <li><a href="#experience" class="block py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Experience</a></li>
-            <li><a href="#skills"     class="block py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Skills</a></li>
-            <li><a href="#projects"   class="block py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Projects</a></li>
-            <li><a href="#contact"    class="block py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Contact</a></li>
+        <ul id="mobile-menu" class="hidden md:hidden nav-shell max-w-5xl mx-auto mt-2 px-6 py-3 space-y-0.5" style="border-radius:1.25rem">
+            <li><a href="#home"       class="block py-2.5 text-sm nav-link">Home</a></li>
+            <li><a href="#experience" class="block py-2.5 text-sm nav-link">Experience</a></li>
+            <li><a href="#skills"     class="block py-2.5 text-sm nav-link">Skills</a></li>
+            <li><a href="#projects"   class="block py-2.5 text-sm nav-link">Projects</a></li>
+            <li><a href="#contact"    class="block py-2.5 text-sm nav-link">Contact</a></li>
         </ul>
     </header>
 
     <!-- ==================== HERO ==================== -->
-    <section id="home" class="relative min-h-screen flex items-center bg-white dark:bg-dark overflow-hidden">
-        <div class="hero-dot-grid absolute inset-0 pointer-events-none"></div>
-        <div class="absolute -top-32 -right-32 w-[600px] h-[600px] bg-primary/5 dark:bg-primary/8 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-24 pb-20 w-full">
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-32 pb-20 w-full">
             <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- Left -->
                 <div data-aos="fade-up" data-aos-duration="600">
-                    <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1.5 rounded-full mb-7">
-                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                        Software Engineer (Full Stack)
-                    </span>
-
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold font-poppins leading-[1.05] mb-4">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold font-poppins leading-[1.05] mb-4" style="color:var(--text)">
                         Hi, I'm<br>
-                        <span class="text-primary">Mushfiq</span>
+                        <span class="text-gradient">Mushfiq</span>
                     </h1>
 
-                    <p class="text-lg sm:text-xl font-medium text-slate-500 dark:text-slate-400 mb-5">
+                    <p class="text-lg sm:text-xl font-medium mb-6" style="color:var(--text-muted)">
                         Full Stack Developer &amp; ML Researcher
                     </p>
 
                     <!-- GitHub Stats Badges -->
-                    <div class="flex flex-wrap gap-3 mb-5">
-                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-full">
-                            <i class="fab fa-github text-primary"></i> 34+ Repositories
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="stat-chip">
+                            <i class="fab fa-github text-gradient"></i>
+                            <span><span class="stat-count" data-target="40">0</span>+ Repositories</span>
                         </span>
-                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-full">
-                            <i class="fas fa-globe text-primary"></i> 15+ Live Projects
+                        <span class="stat-chip">
+                            <i class="fas fa-globe" style="color:var(--grad-3)"></i>
+                            <span><span class="stat-count" data-target="15">0</span>+ Live Projects</span>
                         </span>
-                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-full">
-                            <i class="fas fa-file-alt text-primary"></i> Published Researcher
+                        <span class="stat-chip">
+                            <i class="fas fa-file-alt" style="color:var(--grad-2)"></i> Springer-Published Author
                         </span>
                     </div>
 
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed max-w-md mb-9 text-sm sm:text-base">
+                    <p class="leading-relaxed max-w-md mb-9 text-sm sm:text-base" style="color:var(--text-muted)">
                         CSE graduate from JUST specializing in building scalable web apps with Node.js, Express, Next.js, and React. Experienced in ASP.NET Core, and researching NLP with a published paper on Bangla sentiment analysis.
                     </p>
 
                     <div class="flex flex-wrap gap-3 mb-9">
-                        <a href="assets/resume.pdf" download="Mushfiq_Rahman_Resume.pdf"
-                           class="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-sky-400 text-dark font-semibold text-sm rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-primary/20">
+                        <a href="assets/resume.pdf" download="Mushfiq_Rahman_Resume.pdf" class="btn-gradient magnetic">
                             Download Resume <i class="fas fa-download text-xs"></i>
                         </a>
-                        <a href="#projects"
-                           class="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-primary hover:text-primary font-semibold text-sm rounded-xl transition-all duration-200 hover:-translate-y-0.5">
+                        <a href="#projects" class="btn-ghost magnetic">
                             View Projects <i class="fas fa-arrow-right text-xs"></i>
                         </a>
                     </div>
@@ -156,13 +150,12 @@
                 <div data-aos="fade-up" data-aos-delay="150" data-aos-duration="600"
                      class="flex justify-center md:justify-end">
                     <div class="relative">
-                        <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-[340px] md:h-[340px] lg:w-[380px] lg:h-[380px] rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-2xl">
-                            <div class="absolute inset-0 rounded-3xl ring-2 ring-primary/25 z-10 pointer-events-none"></div>
-                            <img src="assets/images/mushfiq.jpg" alt="Mushfiq Nehal" class="w-full h-full object-cover">
+                        <div class="avatar-frame w-64 h-64 sm:w-72 sm:h-72 md:w-[340px] md:h-[340px] lg:w-[380px] lg:h-[380px]">
+                            <img src="assets/images/mushfiq.jpg" alt="Mushfiq Nehal">
                         </div>
-                        <div class="absolute -bottom-5 -left-5 bg-white dark:bg-dark-lighter border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 shadow-xl z-20">
-                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Software Engineer</p>
-                            <p class="text-sm font-bold text-slate-900 dark:text-white">(Full Stack)</p>
+                        <div class="floating-badge absolute -bottom-5 -left-5 px-4 py-2.5 z-20">
+                            <p class="text-xs font-medium" style="color:var(--text-faint)">Software Engineer</p>
+                            <p class="text-sm font-bold" style="color:var(--text)">(Full Stack)</p>
                         </div>
                     </div>
                 </div>
@@ -170,40 +163,39 @@
         </div>
     </section>
 
-    <!-- ==================== ABOUT ==================== -->
     <!-- ==================== EXPERIENCE ==================== -->
-    <section id="experience" class="py-24 bg-white dark:bg-dark scroll-mt-16">
+    <section id="experience" class="py-24 scroll-mt-16">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <p class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-2">Work</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-slate-900 dark:text-white">Experience</h2>
+                <p class="eyebrow mb-2">Work</p>
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Experience</h2>
             </div>
 
             <div class="max-w-3xl mx-auto">
                 <div class="relative pl-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute left-0 top-5 w-3 h-3 rounded-full bg-primary border-[3px] border-white dark:border-dark ring-1 ring-primary/30 z-10"></div>
-                    <div class="absolute left-[5px] top-8 bottom-0 w-px bg-slate-200 dark:bg-slate-800"></div>
-                    <div class="p-6 rounded-2xl bg-white dark:bg-dark-lighter border border-slate-200 dark:border-slate-700/70 hover:border-primary/40 transition-colors duration-300">
+                    <div class="absolute left-0 top-6 w-3 h-3 rounded-full z-10" style="background:var(--signature);box-shadow:0 0 0 4px var(--bg),0 0 0 6px rgba(168,85,247,0.3)"></div>
+                    <div class="absolute left-[5px] top-9 bottom-0 w-px" style="background:linear-gradient(var(--border-hover),transparent)"></div>
+                    <div class="glass-card glow-border p-6 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
                             <div>
-                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Software Engineering Intern</h3>
-                                <p class="text-sm font-medium text-primary flex items-center gap-1.5 mt-0.5">
+                                <h3 class="text-base font-bold" style="color:var(--text)">Software Engineering Intern</h3>
+                                <p class="text-sm font-medium flex items-center gap-1.5 mt-0.5 text-gradient">
                                     <i class="fas fa-building text-xs"></i>
                                     Syftet Limited
                                 </p>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-full whitespace-nowrap self-start">
-                                <i class="fas fa-calendar-alt text-primary text-xs"></i>
+                            <span class="stat-chip whitespace-nowrap self-start">
+                                <i class="fas fa-calendar-alt text-xs" style="color:var(--grad-2)"></i>
                                 Jan 2026 – April 2026
                             </span>
                         </div>
-                        <ul class="text-sm text-slate-500 dark:text-slate-400 space-y-1.5 mt-2">
+                        <ul class="text-sm space-y-1.5 mt-2" style="color:var(--text-muted)">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-chevron-right text-xs text-primary mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-chevron-right text-xs mt-1 flex-shrink-0" style="color:var(--grad-2)"></i>
                                 Worked on full-stack web development using ASP.NET Core and modern frontend technologies
                             </li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-chevron-right text-xs text-primary mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-chevron-right text-xs mt-1 flex-shrink-0" style="color:var(--grad-2)"></i>
                                 Gained hands-on experience with enterprise software development workflows and team collaboration
                             </li>
                         </ul>
@@ -214,11 +206,11 @@
     </section>
 
     <!-- ==================== SKILLS ==================== -->
-    <section id="skills" class="py-24 bg-slate-50 dark:bg-dark-light overflow-hidden scroll-mt-16">
+    <section id="skills" class="py-24 overflow-hidden scroll-mt-16">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <p class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-2">Expertise</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-slate-900 dark:text-white">Skills</h2>
+                <p class="eyebrow mb-2">Expertise</p>
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Skills</h2>
             </div>
         </div>
 
@@ -229,75 +221,75 @@
             <div class="skills-banner-wrapper overflow-hidden px-32">
                 <div class="skills-banner flex gap-3">
                     <div class="skills-track flex gap-3 flex-shrink-0">
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-code text-primary text-sm"></i></div><span>ASP.NET Core</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-primary text-sm font-bold">C#</span></div><span>C#</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-primary text-sm"></i></div><span>Entity Framework</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-primary text-sm"></i></div><span>SQL Server</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-network-wired text-primary text-sm"></i></div><span>Web API</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-leaf text-primary text-sm"></i></div><span>MongoDB</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-server text-primary text-sm"></i></div><span>Express.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-primary text-sm"></i></div><span>React</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-node text-primary text-sm"></i></div><span>Node.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-js text-primary text-sm"></i></div><span>JavaScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-exchange-alt text-primary text-sm"></i></div><span>RESTful APIs</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-python text-primary text-sm"></i></div><span>Python</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-brain text-primary text-sm"></i></div><span>Machine Learning</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-language text-primary text-sm"></i></div><span>NLP</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-git-alt text-primary text-sm"></i></div><span>Git &amp; GitHub</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-docker text-primary text-sm"></i></div><span>Docker</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-microsoft text-primary text-sm"></i></div><span>Azure</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-html5 text-primary text-sm"></i></div><span>HTML / CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-primary text-xs font-bold">TW</span></div><span>Tailwind CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-primary text-xs font-bold">TS</span></div><span>TypeScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-primary text-sm"></i></div><span>Next.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-rocket text-primary text-sm"></i></div><span>Astro</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-primary text-sm"></i></div><span>PostgreSQL</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-bolt text-primary text-sm"></i></div><span>Supabase</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-sync-alt text-primary text-sm"></i></div><span>CI/CD</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-code text-sm"></i></div><span>ASP.NET Core</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><span class="text-sm font-bold">C#</span></div><span>C#</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>Entity Framework</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>SQL Server</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-network-wired text-sm"></i></div><span>Web API</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-leaf text-sm"></i></div><span>MongoDB</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-server text-sm"></i></div><span>Express.js</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>React</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-node text-sm"></i></div><span>Node.js</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-js text-sm"></i></div><span>JavaScript</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-exchange-alt text-sm"></i></div><span>RESTful APIs</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-python text-sm"></i></div><span>Python</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-brain text-sm"></i></div><span>Machine Learning</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-language text-sm"></i></div><span>NLP</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-git-alt text-sm"></i></div><span>Git &amp; GitHub</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-docker text-sm"></i></div><span>Docker</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-microsoft text-sm"></i></div><span>Azure</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-html5 text-sm"></i></div><span>HTML / CSS</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TW</span></div><span>Tailwind CSS</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TS</span></div><span>TypeScript</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>Next.js</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-rocket text-sm"></i></div><span>Astro</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>PostgreSQL</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-bolt text-sm"></i></div><span>Supabase</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-sync-alt text-sm"></i></div><span>CI/CD</span></div>
                     </div>
                     <div class="skills-track flex gap-3 flex-shrink-0" aria-hidden="true">
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-code text-primary text-sm"></i></div><span>ASP.NET Core</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-primary text-sm font-bold">C#</span></div><span>C#</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-primary text-sm"></i></div><span>Entity Framework</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-primary text-sm"></i></div><span>SQL Server</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-network-wired text-primary text-sm"></i></div><span>Web API</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-leaf text-primary text-sm"></i></div><span>MongoDB</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-server text-primary text-sm"></i></div><span>Express.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-primary text-sm"></i></div><span>React</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-node text-primary text-sm"></i></div><span>Node.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-js text-primary text-sm"></i></div><span>JavaScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-exchange-alt text-primary text-sm"></i></div><span>RESTful APIs</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-python text-primary text-sm"></i></div><span>Python</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-brain text-primary text-sm"></i></div><span>Machine Learning</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-language text-primary text-sm"></i></div><span>NLP</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-git-alt text-primary text-sm"></i></div><span>Git &amp; GitHub</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-docker text-primary text-sm"></i></div><span>Docker</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-microsoft text-primary text-sm"></i></div><span>Azure</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-html5 text-primary text-sm"></i></div><span>HTML / CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-primary text-xs font-bold">TW</span></div><span>Tailwind CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-primary text-xs font-bold">TS</span></div><span>TypeScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-primary text-sm"></i></div><span>Next.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-rocket text-primary text-sm"></i></div><span>Astro</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-primary text-sm"></i></div><span>PostgreSQL</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-bolt text-primary text-sm"></i></div><span>Supabase</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-sync-alt text-primary text-sm"></i></div><span>CI/CD</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-code text-sm"></i></div><span>ASP.NET Core</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><span class="text-sm font-bold">C#</span></div><span>C#</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>Entity Framework</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>SQL Server</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-network-wired text-sm"></i></div><span>Web API</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-leaf text-sm"></i></div><span>MongoDB</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-server text-sm"></i></div><span>Express.js</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>React</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-node text-sm"></i></div><span>Node.js</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-js text-sm"></i></div><span>JavaScript</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-exchange-alt text-sm"></i></div><span>RESTful APIs</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-python text-sm"></i></div><span>Python</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-brain text-sm"></i></div><span>Machine Learning</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-language text-sm"></i></div><span>NLP</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-git-alt text-sm"></i></div><span>Git &amp; GitHub</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-docker text-sm"></i></div><span>Docker</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-microsoft text-sm"></i></div><span>Azure</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-html5 text-sm"></i></div><span>HTML / CSS</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TW</span></div><span>Tailwind CSS</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TS</span></div><span>TypeScript</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>Next.js</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-rocket text-sm"></i></div><span>Astro</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>PostgreSQL</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-bolt text-sm"></i></div><span>Supabase</span></div>
+                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-sync-alt text-sm"></i></div><span>CI/CD</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-white dark:bg-dark scroll-mt-16">
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="py-24 scroll-mt-16">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
             <div class="mb-12" data-aos="fade-up">
-                <p class="text-sm font-semibold text-primary tracking-widest uppercase mb-2">Work</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-slate-900 dark:text-white">Featured Projects</h2>
+                <p class="eyebrow mb-2">Work</p>
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Featured Projects</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Project 1: BairePorbo -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/Baire Porbo/1.png" alt="BairePorbo Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/Baire Porbo/2.png" alt="BairePorbo Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
@@ -305,7 +297,7 @@
                             <img src="assets/images/Baire Porbo/4.png" alt="BairePorbo Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/Baire Porbo/5.png" alt="BairePorbo Screenshot 5" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">AI Platform</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">AI Platform</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -321,7 +313,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">BairePorbo</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">BairePorbo</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">Next.js 16</span>
                             <span class="tech-tag">Neon (PostgreSQL)</span>
@@ -331,7 +323,7 @@
                             <span class="tech-tag">Cloudflare R2</span>
                             <span class="tech-tag">Android TWA</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             AI-powered scholarship platform serving 1,200+ weekly unique visitors. Features a context-aware AI mentor chat using OpenRouter (DeepSeek-V4) and Neon pgvector similarity search, NVIDIA NIM embeddings, Clerk role management, Cloudflare R2 media hosting, and an installable Android TWA.
                         </p>
                         <div class="flex gap-4">
@@ -348,13 +340,13 @@
                 </div>
 
                 <!-- Project 2: Tong Chat -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/Tong Chat/Screenshot 2026-04-10 110945.png" alt="Tong Chat Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/Tong Chat/Screenshot 2026-04-10 113629.png" alt="Tong Chat Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">Team Project</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Team Project</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -367,7 +359,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Tong Chat</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Tong Chat</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">Express</span>
@@ -379,7 +371,7 @@
                             <span class="tech-tag">Tailwind CSS</span>
                             <span class="tech-tag">Docker</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             Full-stack real-time messaging platform with group chats, media sharing, OTP-based auth, and presence tracking. Built on a scalable event-driven architecture with Socket.io rooms, dual-database persistence (PostgreSQL + MongoDB), and JWT refresh token rotation.
                         </p>
                         <div class="flex gap-4">
@@ -395,9 +387,52 @@
                     </div>
                 </div>
 
+                <!-- Project 3: Suchona Labs -->
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="carousel-container h-full">
+                            <img src="assets/images/Suchona Labs/Screenshot From 2026-07-12 13-11-49.png" alt="Suchona Labs Screenshot 1" class="carousel-image w-full h-full object-cover">
+                            <img src="assets/images/Suchona Labs/Screenshot From 2026-07-12 13-11-57.png" alt="Suchona Labs Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
+                        </div>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Agency Site</span>
+                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
+                            <i class="fas fa-chevron-left text-xs"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
+                            <i class="fas fa-chevron-right text-xs"></i>
+                        </button>
+                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
+                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Suchona Labs</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TailwindCSS</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Framer Motion</span>
+                        </div>
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
+                            Premium marketing site for Suchona Labs, a software agency building AI-powered digital products.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://www.suchonalabs.tech/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt text-xs"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/mushfiq-nehal/Suchona-Labs" target="_blank" class="project-link-muted">
+                                <i class="fab fa-github text-xs"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 3: JUST MART -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060427.png" alt="JUST MART Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060452.png" alt="JUST MART Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
@@ -406,7 +441,7 @@
                             <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060848.png" alt="JUST MART Screenshot 5" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060947.png" alt="JUST MART Screenshot 6" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">E-Commerce</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">E-Commerce</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -423,7 +458,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">JUST MART</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">JUST MART</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">ASP.NET Core 8.0</span>
                             <span class="tech-tag">MVC</span>
@@ -432,7 +467,7 @@
                             <span class="tech-tag">Azure SQL</span>
                             <span class="tech-tag">Blob Storage</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             A modern e-commerce web application built with ASP.NET Core 8.0 MVC, featuring role-based authentication, cloud image storage via Azure Blob Storage, and SSLCommerz payment integration.
                         </p>
                         <div class="flex gap-4">
@@ -449,13 +484,13 @@
                 </div>
 
                 <!-- Project 4: LinkedIn Toolkit -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/LinkedIn Toolkit/Screenshot From 2026-06-24 02-18-39.png" alt="LinkedIn Toolkit Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/LinkedIn Toolkit/Screenshot From 2026-06-24 02-19-04.png" alt="LinkedIn Toolkit Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">SaaS Tool</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">SaaS Tool</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -468,7 +503,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">LinkedIn Toolkit</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">LinkedIn Toolkit</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">Astro</span>
                             <span class="tech-tag">TypeScript</span>
@@ -476,7 +511,7 @@
                             <span class="tech-tag">Tailwind CSS v4</span>
                             <span class="tech-tag">SEO</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             Free LinkedIn productivity tools for creators, professionals, job seekers, and recruiters. 10+ tools including text formatter, post generator, headline analyzer, and more.
                         </p>
                         <div class="flex gap-4">
@@ -493,8 +528,8 @@
                 </div>
 
                 <!-- Project 5: Raftura (frontend Project) -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-23-58.png" alt="Raftura Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-24-15.png" alt="Raftura Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
@@ -502,7 +537,7 @@
                             <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-24-47.png" alt="Raftura Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-25-04.png" alt="Raftura Screenshot 5" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">Frontend</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Frontend</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -518,7 +553,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Raftura</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Raftura</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">React 19</span>
                             <span class="tech-tag">TypeScript</span>
@@ -528,7 +563,7 @@
                             <span class="tech-tag">Lenis</span>
                             <span class="tech-tag">shadcn/ui</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             Practical assessment for the Frontend Developer Internship at CodesRaft. Built with React 19, TypeScript, and Vite. UI components from shadcn/ui, styled with Tailwind CSS, with animations handled by GSAP and smooth scrolling with Lenis.
                         </p>
                         <div class="flex gap-4">
@@ -545,15 +580,15 @@
                 </div>
 
                 <!-- Project 6: Growstack -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/GrowStack/Screenshot 2026-03-18 151847.png" alt="GrowStack Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/GrowStack/Screenshot 2026-03-18 151935.png" alt="GrowStack Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/GrowStack/Screenshot 2026-03-18 152023.png" alt="GrowStack Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/GrowStack/Screenshot 2026-03-18 152049.png" alt="GrowStack Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">Social Journal</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Social Journal</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -568,7 +603,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">GrowStack</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">GrowStack</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">MongoDB</span>
@@ -578,7 +613,7 @@
                             <span class="tech-tag">ImageKit</span>
                             <span class="tech-tag">Vercel</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             A personal growth journal where users keep private entries or share publicly. Includes reactions, comments, streak tracking for accountability, and engagement notifications.
                         </p>
                         <div class="flex gap-4">
@@ -595,15 +630,15 @@
                 </div>
 
                 <!-- Project 7: Study Materials for KUET TE -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-17 160455.png" alt="Study Materials Platform Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-17 160607.png" alt="Study Materials Platform Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-18 005143.png" alt="Study Materials Platform Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-18 005219.png" alt="Study Materials Platform Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">Edu Platform</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Edu Platform</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -618,7 +653,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Study Materials for KUET TE</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Study Materials for KUET TE</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
@@ -626,7 +661,7 @@
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">Vercel</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             A semester-wise study materials platform built for KUET Textile Engineering 2024 students. Browse courses, access lecture notes and slides, and search resources quickly — all in one place.
                         </p>
                         <div class="flex gap-4">
@@ -643,15 +678,15 @@
                 </div>
 
                 <!-- Project 8: Share reads -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/Share Reads/Screenshot 2025-11-07 043408.png" alt="Share-Reads Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/Share Reads/Screenshot 2025-11-07 043443.png" alt="Share-Reads Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/Share Reads/Screenshot 2025-11-07 043459.png" alt="Share-Reads Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/Share Reads/Screenshot 2025-11-07 043520.png" alt="Share-Reads Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">Team Project</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Team Project</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -666,7 +701,7 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Share reads</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Share reads</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">EJS</span>
@@ -674,7 +709,7 @@
                             <span class="tech-tag">Firebase</span>
                             <span class="tech-tag">Bootstrap</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             A full-stack web app enabling users to share and borrow books within a community. Features user authentication, real-time notifications, book search, and request management for borrowing and lending.
                         </p>
                         <div class="flex gap-4">
@@ -691,14 +726,14 @@
                 </div>
 
                 <!-- Project 9: Mycgpa -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
+                    <div class="relative h-56 overflow-hidden">
                         <div class="carousel-container h-full">
                             <img src="assets/images/MyCGPA/Screenshot From 2026-06-24 02-21-02.png" alt="Mycgpa Screenshot 1" class="carousel-image w-full h-full object-cover">
                             <img src="assets/images/MyCGPA/Screenshot From 2026-06-24 02-21-24.png" alt="Mycgpa Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
                             <img src="assets/images/MyCGPA/Screenshot From 2026-06-24 02-22-10.png" alt="Mycgpa Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
                         </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">Edu Tool</span>
+                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Edu Tool</span>
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
                             <i class="fas fa-chevron-left text-xs"></i>
                         </button>
@@ -712,14 +747,14 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Mycgpa</h3>
+                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Mycgpa</h3>
                         <div class="flex flex-wrap gap-1.5 mb-3">
                             <span class="tech-tag">Astro</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">SEO</span>
                             <span class="tech-tag">Vercel</span>
                         </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
                             Free CGPA, GPA, and percentage calculators for universities and grading systems worldwide. SEO-optimized with university-specific pages and responsive design.
                         </p>
                         <div class="flex gap-4">
@@ -734,64 +769,36 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 10: Route Optimization -->
-                <div class="project-card bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
-                        <img src="assets/images/Route  optimization of EV.PNG" alt="Route Optimization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/70 text-white rounded-full text-xs font-semibold backdrop-blur-sm">ML Project</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Route Optimization</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SUMO</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">TraCI</span>
-                            <span class="tech-tag">Machine Learning</span>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-relaxed">
-                            Real-time, data-driven route optimization for electric vehicles using a custom SUMO road network, TraCI/virtual sensor data, and a FastAPI server with ML-enhanced route efficiency.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/mushfiq-nehal/Route-Optimization-of-Electric-Vehicles-in-Bangladesh" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Publications & Achievements Section -->
-    <section id="achievements" class="py-24 bg-slate-50 dark:bg-dark-light scroll-mt-16">
+    <!-- ==================== PUBLICATIONS & ACHIEVEMENTS ==================== -->
+    <section id="achievements" class="py-24 scroll-mt-16">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
             <div class="mb-12" data-aos="fade-up">
-                <p class="text-sm font-semibold text-primary tracking-widest uppercase mb-2">Recognition</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-slate-900 dark:text-white">Achievements & Publications</h2>
+                <p class="eyebrow mb-2">Recognition</p>
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Achievements &amp; Publications</h2>
             </div>
 
             <div class="space-y-5">
                 <!-- Publication -->
                 <div class="achievement-card" data-aos="fade-up">
                     <div class="achv-icon flex-shrink-0">
-                        <i class="fas fa-file-alt text-primary text-lg"></i>
+                        <i class="fas fa-file-alt text-lg"></i>
                     </div>
                     <div class="flex-1">
                         <div class="flex flex-wrap gap-2 mb-2">
-                            <span class="inline-block px-2.5 py-0.5 bg-primary/10 text-primary text-xs font-semibold rounded-full">Springer Nature</span>
+                            <span class="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full" style="background:var(--signature-soft);color:var(--grad-2)">Springer Nature</span>
                             <span class="inline-block px-2.5 py-0.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold rounded-full">Published</span>
                         </div>
-                        <h3 class="text-lg font-bold mb-1.5 text-slate-900 dark:text-white">
+                        <h3 class="text-lg font-bold mb-1.5" style="color:var(--text)">
                             Task-Efficient Framework for Sentiment Analysis of Bangla E-commerce Reviews using Transformer
                         </h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-3">
+                        <p class="text-sm leading-relaxed mb-3" style="color:var(--text-muted)">
                             ICRTCIS 2025 (AIS, Chapter 4) • Transformer-based NLP research • Presented at Arya College, Jaipur, India
                         </p>
-                        <a href="https://doi.org/10.1007/978-3-032-09832-0_4" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                        <a href="https://doi.org/10.1007/978-3-032-09832-0_4" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-medium project-link">
                             <i class="fas fa-link text-xs"></i>
                             <span>View DOI</span>
                             <i class="fas fa-external-link-alt text-xs"></i>
@@ -802,75 +809,75 @@
                 <!-- Achievements Grid -->
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="achievement-card" data-aos="fade-up">
-                        <div class="achv-icon flex-shrink-0" style="background:rgba(234,179,8,0.1)">
-                            <i class="fas fa-trophy text-yellow-500 text-lg"></i>
+                        <div class="achv-icon flex-shrink-0" style="background:rgba(234,179,8,0.12);color:#eab308">
+                            <i class="fas fa-trophy text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-slate-900 dark:text-white mb-0.5">Top 50/538 — SOLVIO AI Hackathon 2025</h4>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">AI-Focused Hackathon</p>
+                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Top 50/538 — SOLVIO AI Hackathon 2025</h4>
+                            <p class="text-sm" style="color:var(--text-muted)">AI-Focused Hackathon</p>
                         </div>
                     </div>
 
                     <div class="achievement-card" data-aos="fade-up" data-aos-delay="50">
-                        <div class="achv-icon flex-shrink-0" style="background:rgba(234,179,8,0.1)">
-                            <i class="fas fa-trophy text-yellow-500 text-lg"></i>
+                        <div class="achv-icon flex-shrink-0" style="background:rgba(234,179,8,0.12);color:#eab308">
+                            <i class="fas fa-trophy text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-slate-900 dark:text-white mb-0.5">Finalist — INNOVATEX Hackathon 2025</h4>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">BUBT IT Club</p>
+                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Finalist — INNOVATEX Hackathon 2025</h4>
+                            <p class="text-sm" style="color:var(--text-muted)">BUBT IT Club</p>
                         </div>
                     </div>
 
                     <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="achv-icon flex-shrink-0">
-                            <i class="fas fa-chart-bar text-primary text-lg"></i>
+                            <i class="fas fa-chart-bar text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-slate-900 dark:text-white mb-0.5">Rank 56/200 — Datathon KUET</h4>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">Data Analysis Competition</p>
+                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Rank 56/200 — Datathon KUET</h4>
+                            <p class="text-sm" style="color:var(--text-muted)">Data Analysis Competition</p>
                         </div>
                     </div>
 
                     <div class="achievement-card" data-aos="fade-up" data-aos-delay="150">
                         <div class="achv-icon flex-shrink-0">
-                            <i class="fas fa-globe text-primary text-lg"></i>
+                            <i class="fas fa-globe text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-slate-900 dark:text-white mb-0.5">Webmaster — IEEE JUST</h4>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">IEEE Student Branch</p>
+                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Webmaster — IEEE JUST</h4>
+                            <p class="text-sm" style="color:var(--text-muted)">IEEE Student Branch</p>
                         </div>
                     </div>
 
                     <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="achv-icon flex-shrink-0">
-                            <i class="fas fa-user-friends text-primary text-lg"></i>
+                            <i class="fas fa-user-friends text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-slate-900 dark:text-white mb-0.5">IEEE Member #100527512</h4>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">Computer Society • Valid Dec 2025</p>
+                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">IEEE Member #100527512</h4>
+                            <p class="text-sm" style="color:var(--text-muted)">Computer Society • Valid Dec 2025</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Certifications -->
-                <div class="p-6 bg-white dark:bg-dark-lighter rounded-2xl border border-slate-200 dark:border-slate-700/60" data-aos="fade-up">
-                    <h3 class="text-lg font-bold mb-5 text-slate-900 dark:text-white flex items-center gap-2">
-                        <i class="fas fa-certificate text-primary"></i>
+                <div class="glass-card p-6" data-aos="fade-up">
+                    <h3 class="text-lg font-bold mb-5 flex items-center gap-2" style="color:var(--text)">
+                        <i class="fas fa-certificate" style="color:var(--grad-2)"></i>
                         Certifications
                     </h3>
                     <div class="space-y-4">
-                        <div class="flex items-start gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                        <div class="flex items-start gap-3 pb-4 border-b" style="border-color:var(--border)">
                             <i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i>
                             <div>
-                                <p class="font-medium text-slate-900 dark:text-white text-sm">Python with Machine Learning (80 hrs)</p>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">JUST, under EDGE Project, ICT Division</p>
+                                <p class="font-medium text-sm" style="color:var(--text)">Python with Machine Learning (80 hrs)</p>
+                                <p class="text-xs" style="color:var(--text-faint)">JUST, under EDGE Project, ICT Division</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i>
                             <div>
-                                <p class="font-medium text-slate-900 dark:text-white text-sm">Foundational C# with Microsoft</p>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">FreeCodeCamp • October 2025</p>
+                                <p class="font-medium text-sm" style="color:var(--text)">Foundational C# with Microsoft</p>
+                                <p class="text-xs" style="color:var(--text-faint)">FreeCodeCamp • October 2025</p>
                             </div>
                         </div>
                     </div>
@@ -879,13 +886,13 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white dark:bg-dark scroll-mt-16">
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="py-24 scroll-mt-16">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
             <div class="mb-12" data-aos="fade-up">
-                <p class="text-sm font-semibold text-primary tracking-widest uppercase mb-2">Contact</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-slate-900 dark:text-white">Get In Touch</h2>
-                <p class="text-slate-500 dark:text-slate-400 mt-3 max-w-xl">Have a project in mind or want to collaborate? Feel free to reach out!</p>
+                <p class="eyebrow mb-2">Contact</p>
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Get In Touch</h2>
+                <p class="mt-3 max-w-xl" style="color:var(--text-muted)">Have a project in mind or want to collaborate? Feel free to reach out!</p>
             </div>
 
             <div class="grid md:grid-cols-5 gap-8">
@@ -893,76 +900,76 @@
                 <div class="md:col-span-2 space-y-3" data-aos="fade-right">
                     <a href="mailto:hello@mushfiqnehal.dev" class="contact-link group">
                         <div class="contact-link-icon">
-                            <i class="fas fa-envelope text-primary"></i>
+                            <i class="fas fa-envelope"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <p class="text-xs text-slate-400 mb-0.5">Email</p>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm truncate group-hover:text-primary transition-colors">hello@mushfiqnehal.dev</p>
+                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">Email</p>
+                            <p class="font-semibold text-sm truncate group-hover:text-gradient transition-colors" style="color:var(--text)">hello@mushfiqnehal.dev</p>
                         </div>
-                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0"></i>
+                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
                     </a>
 
                     <a href="https://linkedin.com/in/mushfiq-nehal" target="_blank" class="contact-link group">
                         <div class="contact-link-icon">
-                            <i class="fab fa-linkedin-in text-primary"></i>
+                            <i class="fab fa-linkedin-in"></i>
                         </div>
                         <div class="flex-1">
-                            <p class="text-xs text-slate-400 mb-0.5">LinkedIn</p>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">mushfiq-nehal</p>
+                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">LinkedIn</p>
+                            <p class="font-semibold text-sm" style="color:var(--text)">mushfiq-nehal</p>
                         </div>
-                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0"></i>
+                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
                     </a>
 
                     <a href="https://web.facebook.com/mushfiqurrahmannehal/" target="_blank" class="contact-link group">
                         <div class="contact-link-icon">
-                            <i class="fab fa-facebook-f text-primary"></i>
+                            <i class="fab fa-facebook-f"></i>
                         </div>
                         <div class="flex-1">
-                            <p class="text-xs text-slate-400 mb-0.5">Facebook</p>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">Mushfiqur Rahman</p>
+                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">Facebook</p>
+                            <p class="font-semibold text-sm" style="color:var(--text)">Mushfiqur Rahman</p>
                         </div>
-                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0"></i>
+                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
                     </a>
 
                     <a href="https://orcid.org/0009-0003-1636-7763" target="_blank" class="contact-link group">
                         <div class="contact-link-icon">
-                            <i class="fab fa-orcid text-primary"></i>
+                            <i class="fab fa-orcid"></i>
                         </div>
                         <div class="flex-1">
-                            <p class="text-xs text-slate-400 mb-0.5">ORCID</p>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">0009-0003-1636-7763</p>
+                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">ORCID</p>
+                            <p class="font-semibold text-sm" style="color:var(--text)">0009-0003-1636-7763</p>
                         </div>
-                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0"></i>
+                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
                     </a>
                 </div>
 
                 <!-- Right Side - Send Message Form -->
                 <div class="md:col-span-3" data-aos="fade-left">
-                    <div class="bg-slate-50 dark:bg-dark-lighter p-7 rounded-2xl border border-slate-200 dark:border-slate-700/60">
-                        <h3 class="text-xl font-bold mb-5 text-slate-900 dark:text-white flex items-center gap-2">
-                            <i class="fas fa-paper-plane text-primary"></i>
+                    <div class="glass-card p-7">
+                        <h3 class="text-xl font-bold mb-5 flex items-center gap-2" style="color:var(--text)">
+                            <i class="fas fa-paper-plane" style="color:var(--grad-2)"></i>
                             Send a Message
                         </h3>
                         <form id="contact-form" class="space-y-4">
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="name" class="block text-xs font-semibold mb-1.5 text-slate-500 dark:text-slate-400 uppercase tracking-wide">Name</label>
+                                    <label for="name" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Name</label>
                                     <input type="text" id="name" name="name" required placeholder="Sarah Johnson" class="form-input">
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-xs font-semibold mb-1.5 text-slate-500 dark:text-slate-400 uppercase tracking-wide">Email</label>
+                                    <label for="email" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Email</label>
                                     <input type="email" id="email" name="email" required placeholder="sarah@example.com" class="form-input">
                                 </div>
                             </div>
                             <div>
-                                <label for="subject" class="block text-xs font-semibold mb-1.5 text-slate-500 dark:text-slate-400 uppercase tracking-wide">Subject</label>
+                                <label for="subject" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Subject</label>
                                 <input type="text" id="subject" name="subject" required placeholder="Web Development Project" class="form-input">
                             </div>
                             <div>
-                                <label for="message" class="block text-xs font-semibold mb-1.5 text-slate-500 dark:text-slate-400 uppercase tracking-wide">Message</label>
+                                <label for="message" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Message</label>
                                 <textarea id="message" name="message" rows="5" required placeholder="Hi Mushfiq! I'd love to discuss a project with you..." class="form-input resize-none"></textarea>
                             </div>
-                            <button type="submit" class="w-full px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2 group">
+                            <button type="submit" class="btn-gradient w-full justify-center group">
                                 <span>Send Message</span>
                                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                             </button>
@@ -973,59 +980,59 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-50 dark:bg-dark-light border-t border-slate-200 dark:border-slate-800/50 py-14">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-14 border-t" style="border-color:var(--border)">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
             <div class="grid md:grid-cols-3 gap-10 mb-10">
                 <!-- Brand -->
                 <div>
                     <h3 class="text-xl font-bold font-poppins mb-3">
-                        <span class="text-slate-900 dark:text-white">Mushfiq</span><span class="text-primary">.</span>
+                        <span style="color:var(--text)">Mushfiq</span><span class="text-gradient">.</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed" style="color:var(--text-muted)">
                         Full-stack developer passionate about building innovative products and exploring ML research.
                     </p>
                 </div>
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-slate-900 dark:text-white font-semibold text-sm mb-3">Quick Links</h4>
+                    <h4 class="font-semibold text-sm mb-3" style="color:var(--text)">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-slate-400 hover:text-primary transition-colors text-sm">Home</a></li>
-                        <li><a href="#skills" class="text-slate-400 hover:text-primary transition-colors text-sm">Skills</a></li>
-                        <li><a href="#projects" class="text-slate-400 hover:text-primary transition-colors text-sm">Projects</a></li>
-                        <li><a href="#contact" class="text-slate-400 hover:text-primary transition-colors text-sm">Contact</a></li>
+                        <li><a href="#home" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Home</a></li>
+                        <li><a href="#skills" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Skills</a></li>
+                        <li><a href="#projects" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Social Links -->
                 <div>
-                    <h4 class="text-slate-900 dark:text-white font-semibold text-sm mb-3">Connect</h4>
+                    <h4 class="font-semibold text-sm mb-3" style="color:var(--text)">Connect</h4>
                     <div class="flex gap-2 mb-4">
                         <a href="https://github.com/mushfiq-nehal" target="_blank" class="social-btn-sm"><i class="fab fa-github"></i></a>
                         <a href="https://linkedin.com/in/mushfiq-nehal" target="_blank" class="social-btn-sm"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://web.facebook.com/mushfiqurrahmannehal/" target="_blank" class="social-btn-sm"><i class="fab fa-facebook-f"></i></a>
                     </div>
-                    <p class="text-slate-400 text-xs"><i class="fas fa-envelope mr-1.5"></i>hello@mushfiqnehal.dev</p>
+                    <p class="text-xs" style="color:var(--text-muted)"><i class="fas fa-envelope mr-1.5"></i>hello@mushfiqnehal.dev</p>
                 </div>
             </div>
 
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-6 text-center">
-                <p class="text-slate-400 text-xs">
-                    © <script>document.write(new Date().getFullYear())</script> All rights reserved • Designed & Built by <span class="font-semibold text-primary">Mushfiq Rahman</span>
+            <div class="border-t pt-6 text-center" style="border-color:var(--border)">
+                <p class="text-xs" style="color:var(--text-faint)">
+                    © <script>document.write(new Date().getFullYear())</script> All rights reserved • Designed &amp; Built by <span class="font-semibold text-gradient">Mushfiq Rahman</span>
                 </p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="fixed bottom-8 right-8 w-11 h-11 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg opacity-0 invisible transition-all hover:scale-110 z-40 flex items-center justify-center">
+    <button id="scroll-top" class="fixed bottom-8 right-8 w-11 h-11 btn-gradient !p-0 rounded-full shadow-lg opacity-0 invisible z-40 flex items-center justify-center">
         <i class="fas fa-arrow-up text-sm"></i>
     </button>
 
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
