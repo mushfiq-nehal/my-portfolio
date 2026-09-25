@@ -1,1062 +1,141 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Md. Mushfiqur Rahman - Full-Stack Software Engineer skilled in ASP.NET Core, React, TypeScript, Astro, and Machine Learning Research">
-    <title>Mushfiq Nehal | Portfolio</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='0.5' stop-color='%23a855f7'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='58' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Md. Mushfiqur Rahman — full-stack software engineer and machine learning researcher.">
+    <meta name="theme-color" content="#f7f8fa">
+    <title>Mushfiq Nehal — Software Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111827'/%3E%3Ctext x='50' y='67' font-family='Arial' font-size='48' font-weight='700' fill='white' text-anchor='middle'%3EMN%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <!-- Custom Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                        poppins: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
-<body class="font-inter overflow-x-hidden">
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- ==================== AURORA BACKGROUND ==================== -->
-    <div class="aurora-bg" aria-hidden="true">
-        <div class="aurora-orb o1"></div>
-        <div class="aurora-orb o2"></div>
-        <div class="aurora-orb o3"></div>
-        <div class="aurora-grid"></div>
-    </div>
-
-    <!-- ==================== NAVBAR ==================== -->
-    <header class="fixed inset-x-0 top-4 z-50 px-4">
-        <nav class="nav-shell max-w-5xl mx-auto px-5 sm:px-6 py-3 flex items-center justify-between">
-            <a href="#home" class="text-lg font-bold font-poppins tracking-tight" style="color:var(--text)">
-                Mushfiq<span class="text-gradient">.</span>
-            </a>
-
-            <ul class="hidden md:flex items-center gap-7">
-                <li><a href="#home"       class="nav-link text-sm transition-colors">Home</a></li>
-                <li><a href="#experience" class="nav-link text-sm transition-colors">Experience</a></li>
-                <li><a href="#skills"     class="nav-link text-sm transition-colors">Skills</a></li>
-                <li><a href="#projects"   class="nav-link text-sm transition-colors">Projects</a></li>
-                <li><a href="#contact"    class="nav-link text-sm transition-colors">Contact</a></li>
-            </ul>
-
-            <div class="flex items-center gap-1">
-                <button id="theme-toggle" aria-label="Toggle theme"
-                        class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                    <i class="fas fa-moon dark:hidden text-base" style="color:var(--text-muted)"></i>
-                    <i class="fas fa-sun hidden dark:inline text-base text-amber-300"></i>
-                </button>
-                <button id="mobile-menu-btn" aria-label="Open menu"
-                        class="md:hidden p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                    <i class="fas fa-bars text-lg" style="color:var(--text-muted)"></i>
-                </button>
-            </div>
-        </nav>
-
-        <ul id="mobile-menu" class="hidden md:hidden nav-shell max-w-5xl mx-auto mt-2 px-6 py-3 space-y-0.5" style="border-radius:1.25rem">
-            <li><a href="#home"       class="block py-2.5 text-sm nav-link">Home</a></li>
-            <li><a href="#experience" class="block py-2.5 text-sm nav-link">Experience</a></li>
-            <li><a href="#skills"     class="block py-2.5 text-sm nav-link">Skills</a></li>
-            <li><a href="#projects"   class="block py-2.5 text-sm nav-link">Projects</a></li>
-            <li><a href="#contact"    class="block py-2.5 text-sm nav-link">Contact</a></li>
-        </ul>
+    <header class="site-header" id="site-header">
+        <div class="container nav-inner">
+            <a class="brand" href="#home"><span>MN</span><strong>Mushfiq Nehal</strong></a>
+            <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span class="sr-only">Open navigation</span></button>
+            <nav id="nav-menu" class="nav-menu" aria-label="Primary navigation">
+                <a href="#about">About</a><a href="#work">Work</a><a href="#research">Research</a><a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- ==================== HERO ==================== -->
-    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
-        <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-32 pb-20 w-full">
-            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <!-- Left -->
-                <div data-aos="fade-up" data-aos-duration="600">
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold font-poppins leading-[1.05] mb-4" style="color:var(--text)">
-                        Hi, I'm<br>
-                        <span class="text-gradient">Mushfiq</span>
-                    </h1>
-
-                    <p class="text-lg sm:text-xl font-medium mb-6" style="color:var(--text-muted)">
-                        Full Stack Developer &amp; ML Researcher
-                    </p>
-
-                    <!-- GitHub Stats Badges -->
-                    <div class="flex flex-wrap gap-3 mb-6">
-                        <span class="stat-chip">
-                            <i class="fab fa-github text-gradient"></i>
-                            <span><span class="stat-count" data-target="40">0</span>+ Repositories</span>
-                        </span>
-                        <span class="stat-chip">
-                            <i class="fas fa-globe" style="color:var(--grad-3)"></i>
-                            <span><span class="stat-count" data-target="15">0</span>+ Live Projects</span>
-                        </span>
-                        <span class="stat-chip">
-                            <i class="fas fa-file-alt" style="color:var(--grad-2)"></i> 2× Published Author (Springer &amp; IEEE)
-                        </span>
-                    </div>
-
-                    <p class="leading-relaxed max-w-md mb-9 text-sm sm:text-base" style="color:var(--text-muted)">
-                        CSE graduate from JUST specializing in building scalable web apps with Node.js, Express, Next.js, and React. Experienced in ASP.NET Core, and researching NLP &amp; deep learning with two published papers (Springer &amp; IEEE).
-                    </p>
-
-                    <div class="flex flex-wrap gap-3 mb-9">
-                        <a href="assets/resume.pdf" download="Mushfiq_Rahman_Resume.pdf" class="btn-gradient magnetic">
-                            Download Resume <i class="fas fa-download text-xs"></i>
-                        </a>
-                        <a href="#projects" class="btn-ghost magnetic">
-                            View Projects <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-
-                    <div class="flex items-center gap-2.5">
-                        <a href="https://github.com/mushfiq-nehal" target="_blank" class="social-btn" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/mushfiq-nehal" target="_blank" class="social-btn" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://web.facebook.com/mushfiqurrahmannehal/" target="_blank" class="social-btn" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </div>
+    <main id="main">
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span></span> Full-stack engineer &amp; ML researcher</p>
+                    <h1>I build practical software that solves real problems.</h1>
+                    <p class="hero-text">I’m Mushfiq, a software engineer from Bangladesh. I design and ship full-stack products, integrate applied AI, and research intelligent systems.</p>
+                    <div class="hero-actions"><a class="button primary" href="#work">See my work</a><a class="button secondary" href="assets/resume.pdf" download="Mushfiq_Rahman_Resume.pdf">Download résumé</a></div>
+                    <div class="hero-links"><a href="https://github.com/mushfiq-nehal" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://linkedin.com/in/mushfiq-nehal" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="mailto:hello@mushfiqnehal.dev">Email ↗</a></div>
                 </div>
-
-                <!-- Right: Profile Image -->
-                <div data-aos="fade-up" data-aos-delay="150" data-aos-duration="600"
-                     class="flex justify-center md:justify-end">
-                    <div class="relative">
-                        <div class="avatar-frame w-64 h-64 sm:w-72 sm:h-72 md:w-[340px] md:h-[340px] lg:w-[380px] lg:h-[380px]">
-                            <img src="assets/images/mushfiq.jpg" alt="Mushfiq Nehal">
-                        </div>
-                        <div class="floating-badge absolute -bottom-5 -left-5 px-4 py-2.5 z-20">
-                            <p class="text-xs font-medium" style="color:var(--text-faint)">Software Engineer</p>
-                            <p class="text-sm font-bold" style="color:var(--text)">(Full Stack)</p>
-                        </div>
-                    </div>
+                <div class="hero-photo">
+                    <img src="assets/images/mushfiq.jpg" alt="Mushfiq Nehal" width="1254" height="1254">
+                    <div class="status"><i></i><span>Available for opportunities</span></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ==================== EXPERIENCE ==================== -->
-    <section id="experience" class="py-24 scroll-mt-16">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <p class="eyebrow mb-2">Work</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Experience</h2>
+            <div class="container hero-facts">
+                <div><strong>15+</strong><span>products shipped</span></div>
+                <div><strong>2</strong><span>research publications</span></div>
+                <div><strong>Full stack</strong><span>web, mobile &amp; AI</span></div>
             </div>
+        </section>
 
-            <div class="max-w-3xl mx-auto">
-                <div class="relative pl-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute left-0 top-6 w-3 h-3 rounded-full z-10" style="background:var(--signature);box-shadow:0 0 0 4px var(--bg),0 0 0 6px rgba(168,85,247,0.3)"></div>
-                    <div class="absolute left-[5px] top-9 bottom-0 w-px" style="background:linear-gradient(var(--border-hover),transparent)"></div>
-                    <div class="glass-card glow-border p-6 hover:-translate-y-1 transition-transform duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                            <div>
-                                <h3 class="text-base font-bold" style="color:var(--text)">Software Engineering Intern</h3>
-                                <p class="text-sm font-medium flex items-center gap-1.5 mt-0.5 text-gradient">
-                                    <i class="fas fa-building text-xs"></i>
-                                    Syftet Limited
-                                </p>
-                            </div>
-                            <span class="stat-chip whitespace-nowrap self-start">
-                                <i class="fas fa-calendar-alt text-xs" style="color:var(--grad-2)"></i>
-                                Jan 2026 – April 2026
-                            </span>
-                        </div>
-                        <ul class="text-sm space-y-1.5 mt-2" style="color:var(--text-muted)">
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-chevron-right text-xs mt-1 flex-shrink-0" style="color:var(--grad-2)"></i>
-                                Worked on full-stack web development using ASP.NET Core and modern frontend technologies
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-chevron-right text-xs mt-1 flex-shrink-0" style="color:var(--grad-2)"></i>
-                                Gained hands-on experience with enterprise software development workflows and team collaboration
-                            </li>
-                        </ul>
-                    </div>
+        <section class="section about" id="about">
+            <div class="container two-column">
+                <div><p class="section-label">About</p><h2>Engineering from product thinking to production.</h2></div>
+                <div class="about-copy">
+                    <p>I enjoy owning the full journey: understanding the problem, shaping a clear interface, designing the system, and keeping it reliable after launch.</p>
+                    <p>My recent work spans full-stack product development, AI-assisted tools, retrieval systems, and NLP research. I choose technology based on the product—not the other way around.</p>
+                    <div class="skills" aria-label="Technical skills"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Node.js</span><span>ASP.NET Core</span><span>PostgreSQL</span><span>MongoDB</span><span>Python</span><span>Machine Learning</span><span>Docker</span><span>Azure</span><span>Cloudflare</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== SKILLS ==================== -->
-    <section id="skills" class="py-24 overflow-hidden scroll-mt-16">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <p class="eyebrow mb-2">Expertise</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Skills</h2>
+        <section class="section work" id="work">
+            <div class="container">
+                <div class="section-head"><div><p class="section-label">Selected work</p><h2>Products I’ve built and shipped.</h2></div><p>A focused selection of production products, full-stack systems, and useful tools.</p></div>
+
+                <article class="featured-project">
+                    <div class="featured-copy">
+                        <div class="project-meta"><span>Flagship product</span><span>2026</span></div>
+                        <h3>BairePorbo</h3>
+                        <p class="lead">AI-powered scholarship and study-abroad guidance for Bangladeshi students, available in Bengali and English.</p>
+                        <p>Built as a production platform with a grounded RAG mentor, semantic scholarship matching, personalised roadmaps, an academic CV builder, and a native Android app.</p>
+                        <div class="stack"><span>Next.js</span><span>Expo</span><span>PostgreSQL</span><span>pgvector</span><span>Clerk</span><span>Cloudflare R2</span></div>
+                        <div class="metrics"><div><strong>4.1K</strong><span>visitors</span></div><div><strong>18K</strong><span>page views</span></div><div><strong>1.76K</strong><span>installs</span></div><div><strong>4.7★</strong><span>rating</span></div></div>
+                        <div class="project-links"><a class="button primary" href="https://baireporbo.app" target="_blank" rel="noreferrer">Visit product ↗</a><a href="https://play.google.com/store/apps/details?id=app.baireporbo.android" target="_blank" rel="noreferrer">Google Play ↗</a><a href="https://github.com/mushfiq-nehal/BairePorbo" target="_blank" rel="noreferrer">Source ↗</a></div>
+                    </div>
+                    <div class="carousel" data-carousel>
+                        <div class="carousel-frame">
+                            <img class="active" src="assets/images/Baire Porbo/1.png?v=20260926" alt="BairePorbo scholarship homepage">
+                            <img src="assets/images/Baire Porbo/2.png?v=20260926" alt="BairePorbo AI scholarship mentor">
+                            <img src="assets/images/Baire Porbo/3.png?v=20260926" alt="BairePorbo scholarship catalogue">
+                            <img src="assets/images/Baire Porbo/4.png?v=20260926" alt="BairePorbo academic CV builder">
+                            <img src="assets/images/Baire Porbo/5.png?v=20260926" alt="BairePorbo study-abroad guides">
+                            <img src="assets/images/Baire Porbo/6.png?v=20260926" alt="BairePorbo scholarship-detail AI mentor">
+                        </div>
+                        <button class="carousel-arrow previous" type="button" data-previous aria-label="Previous screenshot">←</button>
+                        <button class="carousel-arrow next" type="button" data-next aria-label="Next screenshot">→</button>
+                        <div class="carousel-footer"><p><span data-current>01</span> / 06</p><div class="carousel-dots"><button class="active" type="button" data-index="0" aria-label="Show screenshot 1"></button><button type="button" data-index="1" aria-label="Show screenshot 2"></button><button type="button" data-index="2" aria-label="Show screenshot 3"></button><button type="button" data-index="3" aria-label="Show screenshot 4"></button><button type="button" data-index="4" aria-label="Show screenshot 5"></button><button type="button" data-index="5" aria-label="Show screenshot 6"></button></div></div>
+                    </div>
+                </article>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <a class="project-image" href="https://www.tongchat.app" target="_blank" rel="noreferrer"><img src="assets/images/Tong Chat/Screenshot 2026-04-10 110945.png" alt="Tong Chat interface" loading="lazy"></a>
+                        <div class="project-body"><p class="project-type">Realtime communication</p><h3>Tong Chat</h3><p>Messaging with group chat, media sharing, presence, OTP authentication, and scalable event-driven infrastructure.</p><div class="stack"><span>React</span><span>Socket.io</span><span>PostgreSQL</span><span>Redis</span></div><div class="card-links"><a href="https://www.tongchat.app" target="_blank" rel="noreferrer">Live ↗</a><a href="https://github.com/mdmakky/Tong" target="_blank" rel="noreferrer">Source ↗</a></div></div>
+                    </article>
+                    <article class="project-card">
+                        <a class="project-image" href="https://just-mart.azurewebsites.net/" target="_blank" rel="noreferrer"><img src="assets/images/JUST Mart/Screenshot 2025-12-30 060427.png" alt="JUST MART interface" loading="lazy"></a>
+                        <div class="project-body"><p class="project-type">Cloud ecommerce</p><h3>JUST MART</h3><p>Ecommerce with role-based access, payments, cloud image storage, and an Azure production deployment.</p><div class="stack"><span>ASP.NET Core</span><span>Azure SQL</span><span>Blob Storage</span></div><div class="card-links"><a href="https://just-mart.azurewebsites.net/" target="_blank" rel="noreferrer">Live ↗</a><a href="https://github.com/mushfiq-nehal/JUST-Mart" target="_blank" rel="noreferrer">Source ↗</a></div></div>
+                    </article>
+                    <article class="project-card">
+                        <a class="project-image" href="https://www.linkedintoolkit.com" target="_blank" rel="noreferrer"><img src="assets/images/LinkedIn Toolkit/Screenshot From 2026-06-24 02-18-39.png" alt="LinkedIn Toolkit interface" loading="lazy"></a>
+                        <div class="project-body"><p class="project-type">Productivity tools</p><h3>LinkedIn Toolkit</h3><p>A fast, search-friendly suite of 10+ free tools for creators, candidates, recruiters, and professionals.</p><div class="stack"><span>Astro</span><span>TypeScript</span><span>React</span><span>SEO</span></div><div class="card-links"><a href="https://www.linkedintoolkit.com" target="_blank" rel="noreferrer">Live ↗</a><a href="https://github.com/mushfiq-nehal/Linkedin-Toolkit" target="_blank" rel="noreferrer">Source ↗</a></div></div>
+                    </article>
+                    <article class="project-card">
+                        <a class="project-image" href="https://www.suchonalabs.tech/" target="_blank" rel="noreferrer"><img src="assets/images/Suchona Labs/Screenshot From 2026-07-12 13-11-49.png" alt="Suchona Labs website" loading="lazy"></a>
+                        <div class="project-body"><p class="project-type">Agency website</p><h3>Suchona Labs</h3><p>A focused marketing experience for a software studio building modern AI-powered products.</p><div class="stack"><span>Next.js</span><span>TypeScript</span><span>Framer Motion</span></div><div class="card-links"><a href="https://www.suchonalabs.tech/" target="_blank" rel="noreferrer">Live ↗</a><a href="https://github.com/mushfiq-nehal/Suchona-Labs" target="_blank" rel="noreferrer">Source ↗</a></div></div>
+                    </article>
+                </div>
+                <div class="github-cta"><p>More experiments, learning projects, and open-source work live on GitHub.</p><a class="button secondary" href="https://github.com/mushfiq-nehal" target="_blank" rel="noreferrer">View GitHub profile ↗</a></div>
             </div>
-        </div>
+        </section>
 
-        <div class="relative">
-            <div class="gradient-overlay-left absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"></div>
-            <div class="gradient-overlay-right absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"></div>
-
-            <div class="skills-banner-wrapper overflow-hidden px-32">
-                <div class="skills-banner flex gap-3">
-                    <div class="skills-track flex gap-3 flex-shrink-0">
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-code text-sm"></i></div><span>ASP.NET Core</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-sm font-bold">C#</span></div><span>C#</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>Entity Framework</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>SQL Server</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-network-wired text-sm"></i></div><span>Web API</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-leaf text-sm"></i></div><span>MongoDB</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-server text-sm"></i></div><span>Express.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>React</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-node text-sm"></i></div><span>Node.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-js text-sm"></i></div><span>JavaScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-exchange-alt text-sm"></i></div><span>RESTful APIs</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-python text-sm"></i></div><span>Python</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-brain text-sm"></i></div><span>Machine Learning</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-language text-sm"></i></div><span>NLP</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-git-alt text-sm"></i></div><span>Git &amp; GitHub</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-docker text-sm"></i></div><span>Docker</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-microsoft text-sm"></i></div><span>Azure</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-html5 text-sm"></i></div><span>HTML / CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TW</span></div><span>Tailwind CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TS</span></div><span>TypeScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>Next.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-rocket text-sm"></i></div><span>Astro</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>PostgreSQL</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-bolt text-sm"></i></div><span>Supabase</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-sync-alt text-sm"></i></div><span>CI/CD</span></div>
-                    </div>
-                    <div class="skills-track flex gap-3 flex-shrink-0" aria-hidden="true">
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-code text-sm"></i></div><span>ASP.NET Core</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-sm font-bold">C#</span></div><span>C#</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>Entity Framework</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>SQL Server</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-network-wired text-sm"></i></div><span>Web API</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-leaf text-sm"></i></div><span>MongoDB</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-server text-sm"></i></div><span>Express.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>React</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-node text-sm"></i></div><span>Node.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-js text-sm"></i></div><span>JavaScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-exchange-alt text-sm"></i></div><span>RESTful APIs</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-python text-sm"></i></div><span>Python</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-brain text-sm"></i></div><span>Machine Learning</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-language text-sm"></i></div><span>NLP</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-git-alt text-sm"></i></div><span>Git &amp; GitHub</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-docker text-sm"></i></div><span>Docker</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-microsoft text-sm"></i></div><span>Azure</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-html5 text-sm"></i></div><span>HTML / CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TW</span></div><span>Tailwind CSS</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><span class="text-xs font-bold">TS</span></div><span>TypeScript</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fab fa-react text-sm"></i></div><span>Next.js</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-rocket text-sm"></i></div><span>Astro</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-database text-sm"></i></div><span>PostgreSQL</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-bolt text-sm"></i></div><span>Supabase</span></div>
-                        <div class="skill-pill"><div class="skill-icon"><i class="fas fa-sync-alt text-sm"></i></div><span>CI/CD</span></div>
-                    </div>
+        <section class="section research" id="research">
+            <div class="container">
+                <div class="section-head"><div><p class="section-label">Experience &amp; research</p><h2>Building and investigating.</h2></div><p>Production engineering informed by research in NLP, deep learning, and intelligent mobility.</p></div>
+                <div class="experience"><div><span>2026</span><h3>Software Engineering Intern</h3><strong>Syftet Limited</strong></div><p>Worked on full-stack product development using ASP.NET Core and modern frontend technologies within a collaborative engineering workflow.</p></div>
+                <div class="publication-grid">
+                    <article><div class="publication-meta"><span>Springer Nature</span><span>Published · 2025</span></div><h3>Task-Efficient Framework for Sentiment Analysis of Bangla E-commerce Reviews using Transformer</h3><p>Transformer-based NLP research presented at ICRTCIS 2025 in Jaipur, India.</p><a href="https://doi.org/10.1007/978-3-032-09832-0_4" target="_blank" rel="noreferrer">Read publication ↗</a></article>
+                    <article><div class="publication-meta"><span>IEEE SPICSCON</span><span>Accepted · 2026</span></div><h3>Deep Learning-Based Speed Advisory for Electric Vehicles at Signalized Intersections Using V2I Communication</h3><p>First-author research on intelligent mobility, presented at BAUET, Bangladesh.</p></article>
                 </div>
+                <div class="recognition"><span>Top 50 / 538 · SOLVIO AI Hackathon</span><span>Finalist · INNOVATEX Hackathon</span><span>Rank 56 / 200 · Datathon KUET</span><span>Webmaster · IEEE JUST</span></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== PROJECTS ==================== -->
-    <section id="projects" class="py-24 scroll-mt-16">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="mb-12" data-aos="fade-up">
-                <p class="eyebrow mb-2">Work</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Featured Projects</h2>
+        <section class="section contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-copy"><p class="section-label">Contact</p><h2>Let’s build something useful.</h2><p>Open to engineering roles, product collaborations, and research conversations.</p><a class="contact-email" href="mailto:hello@mushfiqnehal.dev">hello@mushfiqnehal.dev ↗</a><div class="contact-links"><a href="https://github.com/mushfiq-nehal" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/mushfiq-nehal" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://orcid.org/0009-0003-1636-7763" target="_blank" rel="noreferrer">ORCID</a></div></div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row"><label>Name<input id="name" name="name" type="text" autocomplete="name" required></label><label>Email<input id="email" name="email" type="email" autocomplete="email" required></label></div>
+                    <label>Subject<input id="subject" name="subject" type="text" required></label>
+                    <label>Message<textarea id="message" name="message" rows="5" required></textarea></label>
+                    <div class="form-actions"><p id="form-status" aria-live="polite"></p><button class="button light" type="submit">Send message</button></div>
+                </form>
             </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Project 1: BairePorbo -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/Baire Porbo/1.png" alt="BairePorbo Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/Baire Porbo/2.png" alt="BairePorbo Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Baire Porbo/3.png" alt="BairePorbo Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Baire Porbo/4.png" alt="BairePorbo Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Baire Porbo/5.png" alt="BairePorbo Screenshot 5" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Baire Porbo/6.png" alt="BairePorbo Screenshot 6" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">AI Platform</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">BairePorbo</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Next.js 16</span>
-                            <span class="tech-tag">Neon (PostgreSQL)</span>
-                            <span class="tech-tag">pgvector (RAG)</span>
-                            <span class="tech-tag">Clerk Auth</span>
-                            <span class="tech-tag">OpenRouter (DeepSeek)</span>
-                            <span class="tech-tag">Cloudflare R2</span>
-                            <span class="tech-tag">Android TWA</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            AI-powered scholarship platform serving 1,200+ weekly unique visitors. Features a context-aware AI mentor chat using OpenRouter (DeepSeek-V4) and Neon pgvector similarity search, NVIDIA NIM embeddings, Clerk role management, Cloudflare R2 media hosting, and an installable Android TWA.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://baireporbo.app" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/BairePorbo" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        </section>
+    </main>
 
-                <!-- Project 2: Tong Chat -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/Tong Chat/Screenshot 2026-04-10 110945.png" alt="Tong Chat Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/Tong Chat/Screenshot 2026-04-10 113629.png" alt="Tong Chat Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Team Project</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Tong Chat</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Socket.io</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            Full-stack real-time messaging platform with group chats, media sharing, OTP-based auth, and presence tracking. Built on a scalable event-driven architecture with Socket.io rooms, dual-database persistence (PostgreSQL + MongoDB), and JWT refresh token rotation.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://www.tongchat.app" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mdmakky/Tong" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: JUST MART -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060427.png" alt="JUST MART Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060452.png" alt="JUST MART Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060545.png" alt="JUST MART Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060639.png" alt="JUST MART Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060848.png" alt="JUST MART Screenshot 5" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/JUST Mart/Screenshot 2025-12-30 060947.png" alt="JUST MART Screenshot 6" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">E-Commerce</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">JUST MART</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">ASP.NET Core 8.0</span>
-                            <span class="tech-tag">MVC</span>
-                            <span class="tech-tag">Azure</span>
-                            <span class="tech-tag">Stripe</span>
-                            <span class="tech-tag">Azure SQL</span>
-                            <span class="tech-tag">Blob Storage</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            A modern e-commerce web application built with ASP.NET Core 8.0 MVC, featuring role-based authentication, cloud image storage via Azure Blob Storage, and SSLCommerz payment integration.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://just-mart.azurewebsites.net/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/JUST-Mart" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: LinkedIn Toolkit -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/LinkedIn Toolkit/Screenshot From 2026-06-24 02-18-39.png" alt="LinkedIn Toolkit Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/LinkedIn Toolkit/Screenshot From 2026-06-24 02-19-04.png" alt="LinkedIn Toolkit Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">SaaS Tool</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">LinkedIn Toolkit</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Astro</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Tailwind CSS v4</span>
-                            <span class="tech-tag">SEO</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            Free LinkedIn productivity tools for creators, professionals, job seekers, and recruiters. 10+ tools including text formatter, post generator, headline analyzer, and more.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://www.linkedintoolkit.com" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/Linkedin-Toolkit" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Suchona Labs -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/Suchona Labs/Screenshot From 2026-07-12 13-11-49.png" alt="Suchona Labs Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/Suchona Labs/Screenshot From 2026-07-12 13-11-57.png" alt="Suchona Labs Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Agency Site</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Suchona Labs</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">TailwindCSS</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Framer Motion</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            Premium marketing site for Suchona Labs, a software agency building AI-powered digital products.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://www.suchonalabs.tech/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/Suchona-Labs" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Raftura (frontend Project) -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-23-58.png" alt="Raftura Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-24-15.png" alt="Raftura Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-24-26.png" alt="Raftura Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-24-47.png" alt="Raftura Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Raftura/Screenshot From 2026-06-24 02-25-04.png" alt="Raftura Screenshot 5" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Frontend</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Raftura</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">React 19</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Vite</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">GSAP</span>
-                            <span class="tech-tag">Lenis</span>
-                            <span class="tech-tag">shadcn/ui</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            Practical assessment for the Frontend Developer Internship at CodesRaft. Built with React 19, TypeScript, and Vite. UI components from shadcn/ui, styled with Tailwind CSS, with animations handled by GSAP and smooth scrolling with Lenis.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://raftura.netlify.app/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/Raftura---Fashion-E-commerce-Frontend" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Growstack -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/GrowStack/Screenshot 2026-03-18 151847.png" alt="GrowStack Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/GrowStack/Screenshot 2026-03-18 151935.png" alt="GrowStack Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/GrowStack/Screenshot 2026-03-18 152023.png" alt="GrowStack Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/GrowStack/Screenshot 2026-03-18 152049.png" alt="GrowStack Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Social Journal</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">GrowStack</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Vanilla JS</span>
-                            <span class="tech-tag">JWT</span>
-                            <span class="tech-tag">Multer</span>
-                            <span class="tech-tag">ImageKit</span>
-                            <span class="tech-tag">Vercel</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            A personal growth journal where users keep private entries or share publicly. Includes reactions, comments, streak tracking for accountability, and engagement notifications.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="http://grow-stack.vercel.app/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/GrowStack" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Study Materials for KUET TE -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-17 160455.png" alt="Study Materials Platform Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-17 160607.png" alt="Study Materials Platform Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-18 005143.png" alt="Study Materials Platform Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Study Materials for KUET TE/Screenshot 2026-03-18 005219.png" alt="Study Materials Platform Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Edu Platform</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Study Materials for KUET TE</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Vercel</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            A semester-wise study materials platform built for KUET Textile Engineering 2024 students. Browse courses, access lecture notes and slides, and search resources quickly — all in one place.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://www.te24.me" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/KUET-TE-Study-Materials-Directory" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8: Share reads -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/Share Reads/Screenshot 2025-11-07 043408.png" alt="Share-Reads Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/Share Reads/Screenshot 2025-11-07 043443.png" alt="Share-Reads Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Share Reads/Screenshot 2025-11-07 043459.png" alt="Share-Reads Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/Share Reads/Screenshot 2025-11-07 043520.png" alt="Share-Reads Screenshot 4" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Team Project</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Share reads</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">EJS</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Bootstrap</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            A full-stack web app enabling users to share and borrow books within a community. Features user authentication, real-time notifications, book search, and request management for borrowing and lending.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://share-reads-web-app-psi.vercel.app/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/Share-Reads-WebAPP" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 9: Mycgpa -->
-                <div class="project-card glow-border group transition-all duration-300" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden">
-                        <div class="carousel-container h-full">
-                            <img src="assets/images/MyCGPA/Screenshot From 2026-06-24 02-21-02.png" alt="Mycgpa Screenshot 1" class="carousel-image w-full h-full object-cover">
-                            <img src="assets/images/MyCGPA/Screenshot From 2026-06-24 02-21-24.png" alt="Mycgpa Screenshot 2" class="carousel-image w-full h-full object-cover hidden">
-                            <img src="assets/images/MyCGPA/Screenshot From 2026-06-24 02-22-10.png" alt="Mycgpa Screenshot 3" class="carousel-image w-full h-full object-cover hidden">
-                        </div>
-                        <span class="badge-gradient absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold">Edu Tool</span>
-                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white w-8 h-8 rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center shadow">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white cursor-pointer active"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                            <span class="dot w-1.5 h-1.5 rounded-full bg-white/50 cursor-pointer"></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Mycgpa</h3>
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="tech-tag">Astro</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">SEO</span>
-                            <span class="tech-tag">Vercel</span>
-                        </div>
-                        <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted)">
-                            Free CGPA, GPA, and percentage calculators for universities and grading systems worldwide. SEO-optimized with university-specific pages and responsive design.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://www.mycgpa.com" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                                <span>Live Demo</span>
-                            </a>
-                            <a href="https://github.com/mushfiq-nehal/My-CGPA---University-wise-cgpa-calculator" target="_blank" class="project-link-muted">
-                                <i class="fab fa-github text-xs"></i>
-                                <span>Code</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== PUBLICATIONS & ACHIEVEMENTS ==================== -->
-    <section id="achievements" class="py-24 scroll-mt-16">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="mb-12" data-aos="fade-up">
-                <p class="eyebrow mb-2">Recognition</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Achievements &amp; Publications</h2>
-            </div>
-
-            <div class="space-y-5">
-                <!-- Publication -->
-                <div class="achievement-card" data-aos="fade-up">
-                    <div class="achv-icon flex-shrink-0">
-                        <i class="fas fa-file-alt text-lg"></i>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex flex-wrap gap-2 mb-2">
-                            <span class="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full" style="background:var(--signature-soft);color:var(--grad-2)">Springer Nature</span>
-                            <span class="inline-block px-2.5 py-0.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold rounded-full">Published</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-1.5" style="color:var(--text)">
-                            Task-Efficient Framework for Sentiment Analysis of Bangla E-commerce Reviews using Transformer
-                        </h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--text-muted)">
-                            ICRTCIS 2025 (AIS, Chapter 4) • Transformer-based NLP research
-                            <br>• Presented at Arya College, Jaipur, India
-                        </p>
-                        <a href="https://doi.org/10.1007/978-3-032-09832-0_4" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-medium project-link">
-                            <i class="fas fa-link text-xs"></i>
-                            <span>View DOI</span>
-                            <i class="fas fa-external-link-alt text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Publication 2 -->
-                <div class="achievement-card" data-aos="fade-up">
-                    <div class="achv-icon flex-shrink-0">
-                        <i class="fas fa-file-alt text-lg"></i>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex flex-wrap gap-2 mb-2">
-                            <span class="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full" style="background:var(--signature-soft);color:var(--grad-2)">IEEE</span>
-                            <span class="inline-block px-2.5 py-0.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold rounded-full">Accepted</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-1.5" style="color:var(--text)">
-                            Deep Learning-Based Speed Advisory for Electric Vehicles at Signalized Intersections Using V2I Communication
-                        </h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--text-muted)">
-                            International Conference on Signal Processing, Information, Communication and Systems 2026 (IEEE SPICSCON 2026)
-                            <br>• First Author • Presented at Bangladesh Army University of Engineering &amp; Technology (BAUET), Bangladesh
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Achievements Grid -->
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="achievement-card" data-aos="fade-up">
-                        <div class="achv-icon flex-shrink-0" style="background:rgba(234,179,8,0.12);color:#eab308">
-                            <i class="fas fa-trophy text-lg"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Top 50/538 — SOLVIO AI Hackathon 2025</h4>
-                            <p class="text-sm" style="color:var(--text-muted)">AI-Focused Hackathon</p>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card" data-aos="fade-up" data-aos-delay="50">
-                        <div class="achv-icon flex-shrink-0" style="background:rgba(234,179,8,0.12);color:#eab308">
-                            <i class="fas fa-trophy text-lg"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Finalist — INNOVATEX Hackathon 2025</h4>
-                            <p class="text-sm" style="color:var(--text-muted)">BUBT IT Club</p>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="achv-icon flex-shrink-0">
-                            <i class="fas fa-chart-bar text-lg"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Rank 56/200 — Datathon KUET</h4>
-                            <p class="text-sm" style="color:var(--text-muted)">Data Analysis Competition</p>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="achv-icon flex-shrink-0">
-                            <i class="fas fa-globe text-lg"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">Webmaster — IEEE JUST</h4>
-                            <p class="text-sm" style="color:var(--text-muted)">IEEE Student Branch</p>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="achv-icon flex-shrink-0">
-                            <i class="fas fa-user-friends text-lg"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-0.5" style="color:var(--text)">IEEE Member #100527512</h4>
-                            <p class="text-sm" style="color:var(--text-muted)">Computer Society • Valid Dec 2025</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certifications -->
-                <div class="glass-card p-6" data-aos="fade-up">
-                    <h3 class="text-lg font-bold mb-5 flex items-center gap-2" style="color:var(--text)">
-                        <i class="fas fa-certificate" style="color:var(--grad-2)"></i>
-                        Certifications
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3 pb-4 border-b" style="border-color:var(--border)">
-                            <i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-medium text-sm" style="color:var(--text)">Python with Machine Learning (80 hrs)</p>
-                                <p class="text-xs" style="color:var(--text-faint)">JUST, under EDGE Project, ICT Division</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-medium text-sm" style="color:var(--text)">Foundational C# with Microsoft</p>
-                                <p class="text-xs" style="color:var(--text-faint)">FreeCodeCamp • October 2025</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CONTACT ==================== -->
-    <section id="contact" class="py-24 scroll-mt-16">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="mb-12" data-aos="fade-up">
-                <p class="eyebrow mb-2">Contact</p>
-                <h2 class="text-3xl md:text-4xl font-bold font-poppins" style="color:var(--text)">Get In Touch</h2>
-                <p class="mt-3 max-w-xl" style="color:var(--text-muted)">Have a project in mind or want to collaborate? Feel free to reach out!</p>
-            </div>
-
-            <div class="grid md:grid-cols-5 gap-8">
-                <!-- Left Side -->
-                <div class="md:col-span-2 space-y-3" data-aos="fade-right">
-                    <a href="mailto:hello@mushfiqnehal.dev" class="contact-link group">
-                        <div class="contact-link-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">Email</p>
-                            <p class="font-semibold text-sm truncate group-hover:text-gradient transition-colors" style="color:var(--text)">hello@mushfiqnehal.dev</p>
-                        </div>
-                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
-                    </a>
-
-                    <a href="https://linkedin.com/in/mushfiq-nehal" target="_blank" class="contact-link group">
-                        <div class="contact-link-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">LinkedIn</p>
-                            <p class="font-semibold text-sm" style="color:var(--text)">mushfiq-nehal</p>
-                        </div>
-                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
-                    </a>
-
-                    <a href="https://web.facebook.com/mushfiqurrahmannehal/" target="_blank" class="contact-link group">
-                        <div class="contact-link-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">Facebook</p>
-                            <p class="font-semibold text-sm" style="color:var(--text)">Mushfiqur Rahman</p>
-                        </div>
-                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
-                    </a>
-
-                    <a href="https://orcid.org/0009-0003-1636-7763" target="_blank" class="contact-link group">
-                        <div class="contact-link-icon">
-                            <i class="fab fa-orcid"></i>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-xs mb-0.5" style="color:var(--text-faint)">ORCID</p>
-                            <p class="font-semibold text-sm" style="color:var(--text)">0009-0003-1636-7763</p>
-                        </div>
-                        <i class="fas fa-arrow-right group-hover:translate-x-0.5 transition-all flex-shrink-0" style="color:var(--text-faint)"></i>
-                    </a>
-                </div>
-
-                <!-- Right Side - Send Message Form -->
-                <div class="md:col-span-3" data-aos="fade-left">
-                    <div class="glass-card p-7">
-                        <h3 class="text-xl font-bold mb-5 flex items-center gap-2" style="color:var(--text)">
-                            <i class="fas fa-paper-plane" style="color:var(--grad-2)"></i>
-                            Send a Message
-                        </h3>
-                        <form id="contact-form" class="space-y-4">
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="name" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Name</label>
-                                    <input type="text" id="name" name="name" required placeholder="Sarah Johnson" class="form-input">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Email</label>
-                                    <input type="email" id="email" name="email" required placeholder="sarah@example.com" class="form-input">
-                                </div>
-                            </div>
-                            <div>
-                                <label for="subject" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Subject</label>
-                                <input type="text" id="subject" name="subject" required placeholder="Web Development Project" class="form-input">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--text-faint)">Message</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Hi Mushfiq! I'd love to discuss a project with you..." class="form-input resize-none"></textarea>
-                            </div>
-                            <button type="submit" class="btn-gradient w-full justify-center group">
-                                <span>Send Message</span>
-                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="py-14 border-t" style="border-color:var(--border)">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="grid md:grid-cols-3 gap-10 mb-10">
-                <!-- Brand -->
-                <div>
-                    <h3 class="text-xl font-bold font-poppins mb-3">
-                        <span style="color:var(--text)">Mushfiq</span><span class="text-gradient">.</span>
-                    </h3>
-                    <p class="text-sm leading-relaxed" style="color:var(--text-muted)">
-                        Full-stack developer passionate about building innovative products and exploring ML research.
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-semibold text-sm mb-3" style="color:var(--text)">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Home</a></li>
-                        <li><a href="#skills" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Skills</a></li>
-                        <li><a href="#projects" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Projects</a></li>
-                        <li><a href="#contact" class="hover:text-gradient transition-colors text-sm" style="color:var(--text-muted)">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Social Links -->
-                <div>
-                    <h4 class="font-semibold text-sm mb-3" style="color:var(--text)">Connect</h4>
-                    <div class="flex gap-2 mb-4">
-                        <a href="https://github.com/mushfiq-nehal" target="_blank" class="social-btn-sm"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/mushfiq-nehal" target="_blank" class="social-btn-sm"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://web.facebook.com/mushfiqurrahmannehal/" target="_blank" class="social-btn-sm"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                    <p class="text-xs" style="color:var(--text-muted)"><i class="fas fa-envelope mr-1.5"></i>hello@mushfiqnehal.dev</p>
-                </div>
-            </div>
-
-            <div class="border-t pt-6 text-center" style="border-color:var(--border)">
-                <p class="text-xs" style="color:var(--text-faint)">
-                    © <script>document.write(new Date().getFullYear())</script> All rights reserved • Designed &amp; Built by <span class="font-semibold text-gradient">Mushfiq Rahman</span>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="fixed bottom-8 right-8 w-11 h-11 btn-gradient !p-0 rounded-full shadow-lg opacity-0 invisible z-40 flex items-center justify-center">
-        <i class="fas fa-arrow-up text-sm"></i>
-    </button>
-
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+    <footer><div class="container footer-inner"><p>© <span id="year"></span> Mushfiq Nehal</p><p>Designed and built with care.</p><a href="#home">Back to top ↑</a></div></footer>
 </body>
 </html>
